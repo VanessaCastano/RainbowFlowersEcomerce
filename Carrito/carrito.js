@@ -29,9 +29,12 @@ class Carrito{
           <button type="button" class="btn btn-danger" onclick="eliminarClick(${i};">Eliminar</button>
         </li>`;  
         productosCodigoHTML += productoSeleccionados 
+        total += this.itemSeleccionados[i].precio; 
 
         }    
-        document.getElementById("lista-compras").innerHTML = productosCodigoHTML
+        document.getElementById("lista-compras").innerHTML = productosCodigoHTML;
+        console.clear();
+        console.log(total)
     }
 
 
