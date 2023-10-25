@@ -9,7 +9,7 @@ let listaProductos = [
     name: "Ramo Blanco" ,
     precio: 30.000 ,
     descripcion: "Ramo compuesto por margaritas, rosas pequeñas y lirios" ,
-    img: "https://i.pinimg.com/originals/af/88/26/af88267663e6f5b576be338a396b8408.jp" ,
+    img: "https://i.pinimg.com/474x/08/39/72/083972fcd09dabbb58fa28b046fb483f.jpg" ,
 },
 {
     name: "Ramo Azul" ,
@@ -56,11 +56,13 @@ let listaProductos = [
 ]
 
 function hacerclick(id){
+    event.preventDefault();
     console.log("diste click", id);
-    RainbowShop.agregarItem(id);
+    RainbowShop.agregarItems(id);
 }
  function eliminarClick(id) {
-console.log("diatnce click", id);
+event.preventDefault();
+console.log("diste click", id);
 RainbowShop.eliminarItem(id);
  }
 
@@ -75,7 +77,7 @@ function mostrarProductos(){
            <h5 class="card-title">${listaProductos[i].name}</h5>
            <p class="card-text">${listaProductos[i].descripcion}</p>
            <p class="card-text">${listaProductos[i].precio}</p>
-           <a href="2" class="btn btn-primary" onClick="hacerclick()=>{click(${i});}">Comprar</a>
+           <a href="2" class="btn btn-primary" onClick="hacerclick(${i});">Comprar</a>
          </div>
        </div>
      </div>
@@ -85,9 +87,7 @@ function mostrarProductos(){
     }
 
 document.getElementById("Catalogo-Carrito").innerHTML = productosCodigoHTML
-mostrarProductos();
-
 }
-
+mostrarProductos();
 let RainbowShop = new Carrito(listaProductos)
 

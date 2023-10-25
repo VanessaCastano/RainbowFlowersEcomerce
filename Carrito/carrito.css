@@ -16,3 +16,11 @@
     height: 60px !important;
 
 }
+.card{
+    width: 220px;
+    height: 440px;
+}
+img{
+    width: auto;
+    height: 200px;
+}

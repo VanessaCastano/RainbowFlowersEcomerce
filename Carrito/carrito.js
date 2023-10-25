@@ -4,21 +4,20 @@ class Carrito{
         this.itemSeleccionados = [];
         
      }
-    agregarItem(id){ 
+    agregarItems(id){ 
         this.itemSeleccionados.push (this.productos[id]);
 
         this.mostrarItems();
     }
     eliminarItem(id){ 
-        this.mostrarItems();
-        console.log(this.itemSeleccionados);
-        this.itemSeleccionados.slice(id, 1);
-        console.log(this.itemSeleccionados.slice(id, 1));
+        console.log(id);
+        this.itemSeleccionados.splice(id, 1);
         this.mostrarItems();
 
     }
-    mostrarItem(){
+    mostrarItems(){
         let productosCodigoHTML = "";
+        let total = 0;
         for( let i = 0; i < this.itemSeleccionados.length; i++) {
             let productoSeleccionados = ` <li class="list-group-item d-flex flex-row justify-content-evenly d-flex align-items-star">
             <img 
@@ -26,14 +25,13 @@ class Carrito{
             class="item-img">
             <p>${this.itemSeleccionados[i].name}</p>
             <p1><i>${this.itemSeleccionados[i].precio}</i></p1>
-          <button type="button" class="btn btn-danger" onclick="eliminarClick(${i};">Eliminar</button>
+          <button type="button" class="btn btn-danger" onclick="eliminarClick(${i});">Eliminar</button>
         </li>`;  
         productosCodigoHTML += productoSeleccionados 
         total += this.itemSeleccionados[i].precio; 
 
         }    
         document.getElementById("lista-compras").innerHTML = productosCodigoHTML;
-        console.clear();
         console.log(total)
     }
 

@@ -6,7 +6,8 @@
   <Title>Login</Title>
 
   <link rel="stylesheet" href="Pagina 1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="login.css"
+  <link rel="stylesheet" href="login.css">
+  <script src="login.js" defer></script>
 
 
   <center> 
@@ -21,7 +22,7 @@
 
 <body>
 
-  <script src="login.js"></script>
+  <script src="login.js" defer></script>
 
 
 <fieldset>
@@ -55,7 +56,7 @@
     <div class="row justify-content-center">
         <div class="col-3">
 
-  <form>
+  <form onsubmit="validarFormulario(event)">
     <div class="mb-3">
       <label for="Email" class="form-label">Email</label>
       <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" autocomplete="on">
@@ -70,7 +71,7 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" oncanplay="return enviarFotmulario();" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 
     <div class="p-3 mb-5 bg-danger-subtle text-warning-subtle"></div>
   </form>
